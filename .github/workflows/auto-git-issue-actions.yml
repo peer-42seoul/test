@@ -3,8 +3,9 @@ name: auto-git-issue-actions
 run-name: ${{ github.actor }} is issueing for ToDoList GitHub Actions
 
 on:
-  schedule: 
-    - cron: "48 * * * *"
+  workflow_dispatch:
+  #schedule: 
+   # - cron: "48 * * * *"
     # - cron: "0 20 * * *"
 
 jobs:
