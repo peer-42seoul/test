@@ -62,7 +62,7 @@ jobs:
               state: 'open'
             });
             console.log(list);
-            console.log(list.size());
+            console.log(list.data.size();
 
 # jobs:
 #   open-issue:
