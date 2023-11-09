@@ -19,8 +19,8 @@ jobs:
         id: check-time
         run: |
           TZ="Asia/Seoul"
+          date
           echo "::set-output name=hour::$(date +'%H')"
-          echo $set-output
       
       - name: Create Issue 
         if: ${{ steps.check-time.outputs.hour == '7' }}
@@ -62,7 +62,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            console.log("Time Zone?" + ${{steps.check-time.outputs.hour}});
+            console.log("Time Zone? : " + ${{steps.check-time.outputs.hour}});
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
             console.log("Test issues")
