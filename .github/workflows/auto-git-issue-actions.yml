@@ -20,7 +20,7 @@ jobs:
         run: echo "::set-output name=hour::$(date +'%H')"
       
       - name: Create Issue 
-        if: ${{ steps.check-time.outputs.hour == '18' }}
+        if: ${{ steps.check-time.outputs.hour == '19' }}
         id: create_issue
         uses: actions/github-script@v6
         with:
@@ -38,12 +38,19 @@ jobs:
             console.log(github);
             const owner = "peer-42seoul";
             const repo = "test";
-            await github.rest.issues.create({
+            const newIssue = await github.rest.issues.create({
               owner,
               repo,
               title: issueTitle,
               body: issueBody
             });
+
+            await github.rest.issues.update({
+              owner,
+              repo, 
+              issue_number: newIssue,
+              pinned: true
+            })
 
       - name: Close Issue
         if: ${{ steps.check-time.outputs.hour != '18' }}
