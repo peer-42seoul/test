@@ -50,7 +50,7 @@ jobs:
             await github.rest.issues.update({
               owner,
               repo, 
-              issue_number: newIssue.date.number,
+              issue_number: newIssue.data.number,
               pinned: true
             })
 
