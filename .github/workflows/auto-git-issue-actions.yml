@@ -21,7 +21,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            const { context, issues } = github;
+            const { context, issues } = require('@actions/github');
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
             const issueBody1 = `# 투두리스트 작성하는 법`;
