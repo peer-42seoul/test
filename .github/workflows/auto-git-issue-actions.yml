@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is issueing for ToDoList GitHub Actions
 
 on:
   schedule: 
-    - cron: "23 * * * *"
+    - cron: "26 * * * *"
     # - cron: "0 20 * * *"
 
 jobs:
