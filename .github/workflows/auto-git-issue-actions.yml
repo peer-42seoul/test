@@ -63,6 +63,11 @@ jobs:
             });
             console.log(response.data);
             console.log(response.data.length);
+            const listData = response.data;
+            for (var i = 0; i < listData.length; i++) {
+              if(listData[i].title === issueTitle)
+                console.log(listData[i]);
+            };
 
 # jobs:
 #   open-issue:
