@@ -31,8 +31,8 @@ jobs:
             console.log(issueBody);
             console.log(github);
             github.issues.create({
-              owner,
-              repo,
+              owner = Paul2021-R,
+              repo = 42peer/test,
               title = currentDate
             });
 
