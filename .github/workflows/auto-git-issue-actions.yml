@@ -33,7 +33,7 @@ jobs:
             github.issues.create({
               owner,
               repo,
-              title = currentDate;
+              title = currentDate
             });
 
 # jobs:
