@@ -61,7 +61,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            console.log(${{steps.check-time.outputs.hour}});
+            console.log(Time Zone 기준? : ${{steps.check-time.outputs.hour}});
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
             console.log("Test issues")
