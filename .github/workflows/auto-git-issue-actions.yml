@@ -31,7 +31,7 @@ jobs:
             console.log(issueTitle);
             console.log(issueBody);
             console.log(github);
-            const owner = "42peer";
+            const owner = "peer-42seoul";
             const repo = "test";
             await github.rest.issues.create({
               owner,
