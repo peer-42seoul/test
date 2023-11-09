@@ -4,9 +4,9 @@ run-name: ${{ github.actor }} is issueing for ToDoList GitHub Actions
 
 on:
   workflow_dispatch:
-  #schedule: 
-   # - cron: "48 * * * *"
-    # - cron: "0 20 * * *"
+#   schedule: 
+#    - cron: "30 10 * * *"
+#    - cron: "0 20 * * *"
 
 jobs:
   open-issue:
@@ -14,15 +14,20 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v4
+    
+      - name: Check Current Time
+        id: check-time
+        run: echo "::set-output name=hour::$(date +'%H')"
       
-      - name: Create Issue
+      - name: Create Issue 
+        if: ${{ steps.check-time.outputs.hour == '18' }}
         id: create_issue
         uses: actions/github-script@v6
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
             const currentDate = new Date().toISOString().split('T')[0];
-            const issueTitle = `${currentDate}-TODO\n`;
+            const issueTitle = `${currentDate}-TODO`;
             const issueBody1 = `# 투두리스트 작성하는 법\n`;
             const issueBody2 = `### (1) 아래 코멘트로 오늘 할 일 적기.\n`;
             const issueBody3 = `### (2) 저녁 8시 전까지 무슨 일을 하셨는지 체킹하기.\n`;
@@ -39,6 +44,17 @@ jobs:
               title: issueTitle,
               body: issueBody
             });
+
+      - name: Close Issue
+        if: ${{ steps.check-time.outputs.hour != '18' }}
+        id: close_issue
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.TOKEN}}
+          script: |
+            const currentDate = new Date().toISOString().split('T')[0];
+            const issueTitle = `${currentDate}-TODO`;
+            console.log("Test issues")
 
 # jobs:
 #   open-issue:
