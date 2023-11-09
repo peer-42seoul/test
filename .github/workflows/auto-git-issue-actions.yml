@@ -50,7 +50,7 @@ jobs:
             await github.rest.issues.update({
               owner,
               repo, 
-              issue_number: newIssue,
+              issue_number: newIssue.date.number,
               pinned: true
             })
 
@@ -61,7 +61,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            console.log(Time Zone 기준? : ${{steps.check-time.outputs.hour}});
+            console.log("Time Zone?" + ${{steps.check-time.outputs.hour}});
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
             console.log("Test issues")
