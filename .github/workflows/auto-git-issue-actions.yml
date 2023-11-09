@@ -65,7 +65,13 @@ jobs:
             const listData = response.data;
             for (var i = 0; i < listData.length; i++) {
               if(listData[i].title === issueTitle)
-                console.log(listData[i]);
+              {
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: listData[i].number
+                })   
+              }
             };
 
 # jobs:
