@@ -44,14 +44,6 @@ jobs:
               title: issueTitle,
               body: issueBody
             });
-         
-            await new Promise(resolve => setTimeout(resolve, 5000));
-
-            await github.request('POST /repos/:owner/:repo/issues/:issue_number/pin', {
-              owner,
-              repo,
-              issue_number: newIssue.data.number
-            });
 
       - name: Close Issue
         if: ${{ steps.check-time.outputs.hour == '20' }}
