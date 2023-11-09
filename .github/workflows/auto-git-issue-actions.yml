@@ -59,7 +59,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            consiole.log(${{steps.check-time.outputs.hour}});
+            console.log(${{steps.check-time.outputs.hour}});
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
             console.log("Test issues")
