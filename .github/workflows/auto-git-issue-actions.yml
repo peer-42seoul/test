@@ -19,7 +19,7 @@ jobs:
         id: check-time
         run: |
           date
-          echo "::set-output name=hour::$(date -d '-3 hours' +'%H')"
+          echo "::set-output name=hour::$(date -d '+10 hours' +'%H')"
       
       - name: Create Issue 
         if: ${{ steps.check-time.outputs.hour == '7' }}
