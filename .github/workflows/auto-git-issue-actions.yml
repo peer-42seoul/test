@@ -28,6 +28,7 @@ jobs:
             const issueBody3 = `### (2) 저녁 8시 전까지 무슨 일을 하셨는지 체킹하기.\n`;
             const issueBody4 = `### 참고사항 본인의 작업 코드에 해당하는 이슈 링크 첨부 권장 (그 사람이 전체적인 작업 현황을 쉽게 볼 수 있으면 좋겠다는 의견)`;
             const issueBody = issueBody1 + issueBody2 + issueBody3 + issueBody4;
+            console.log(currentDate);
             console.log(issueBody);
             console.log(github);
 
