@@ -31,8 +31,8 @@ jobs:
             console.log(issueTitle);
             console.log(issueBody);
             console.log(github);
-            const owner = "Paul2021-R";
-            const repo = "42peer/test";
+            const owner = "42peer";
+            const repo = "test";
             await github.rest.issues.create({
               owner,
               repo,
