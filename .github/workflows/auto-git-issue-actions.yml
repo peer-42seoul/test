@@ -52,10 +52,16 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            console.log("Time Zone? : " + ${{steps.check-time.outputs.hour}});
             const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO`;
-            console.log("Test issues")
+            const owner = "peer-42seoul";
+            const repo = "test";
+            const list = github.rest.issues.list({
+              owner,
+              repo,
+              state: 'open'
+            });
+            console.log(list);
 
 # jobs:
 #   open-issue:
