@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: open_TODO_list
-        uses: action/github-script@v5
+        uses: action/github-script@v3
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
