@@ -31,9 +31,9 @@ jobs:
             console.log(issueBody);
             console.log(github);
             await github.rest.issues.create({
-              owner = Paul2021-R,
-              repo = 42peer/test,
-              title = currentDate
+              owner: Paul2021-R,
+              repo: 42peer/test,
+              title: currentDate
             });
 
 # jobs:
