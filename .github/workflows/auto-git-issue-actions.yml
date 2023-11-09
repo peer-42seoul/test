@@ -44,6 +44,8 @@ jobs:
               title: issueTitle,
               body: issueBody
             });
+         
+            await new Promise(resolve => setTimeout(resolve, 5000));
 
             await github.rest.issues.update({
               owner,
