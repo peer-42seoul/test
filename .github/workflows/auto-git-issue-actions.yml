@@ -15,8 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: open_TODO_list
-        uses: action/github-script@v3
+      - name: Create Issue
+        id: create_issue
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
