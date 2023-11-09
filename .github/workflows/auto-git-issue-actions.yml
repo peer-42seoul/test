@@ -30,11 +30,11 @@ jobs:
             const issueBody = issueBody1 + issueBody2 + issueBody3 + issueBody4;
             console.log(issueBody);
             console.log(github);
-            await github.rest.issues.create({
-              owner: Paul2021-R,
-              repo: 42peer/test,
-              title: currentDate
-            });
+            # await github.rest.issues.create({
+            #   owner: Paul2021-R,
+            #   repo: 42peer/test,
+            #   title: currentDate
+            # });
 
 # jobs:
 #   open-issue:
