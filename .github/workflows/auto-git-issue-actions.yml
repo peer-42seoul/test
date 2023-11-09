@@ -69,7 +69,8 @@ jobs:
                 await github.rest.issues.update({
                   owner,
                   repo,
-                  issue_number: listData[i].number
+                  issue_number: listData[i].number,
+                  state: 'close'
                 })   
               }
             };
