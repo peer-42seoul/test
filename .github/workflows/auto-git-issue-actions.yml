@@ -20,6 +20,7 @@ jobs:
         run: |
           TZ="Asia/Seoul"
           echo "::set-output name=hour::$(date +'%H')"
+          echo $set-output
       
       - name: Create Issue 
         if: ${{ steps.check-time.outputs.hour == '7' }}
