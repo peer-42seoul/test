@@ -47,7 +47,7 @@ jobs:
          
             await new Promise(resolve => setTimeout(resolve, 5000));
 
-            await github.request('PUT /repos/:owner/:repo/issues/:issue_number/pin', {
+            await github.request('POST /repos/:owner/:repo/issues/:issue_number/pin', {
               owner,
               repo,
               issue_number: newIssue.data.number
