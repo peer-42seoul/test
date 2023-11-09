@@ -4,12 +4,13 @@ run-name: ${{ github.actor }} is issueing for ToDoList GitHub Actions
 
 on:
   schedule: 
-    - cron: "26 * * * *"
+    - cron: "48 * * * *"
     # - cron: "0 20 * * *"
 
 jobs:
   open-issue:
     runs-on: ubuntu-latest
+    repository: peer-42seoul/test
     steps: 
       - name: Checkout
         uses: actions/checkout@v4
