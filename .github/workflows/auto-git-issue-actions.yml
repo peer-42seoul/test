@@ -61,7 +61,6 @@ jobs:
               repo,
               state: 'open'
             });
-            console.log(response.data);
             console.log(response.data.length);
             const listData = response.data;
             for (var i = 0; i < listData.length; i++) {
