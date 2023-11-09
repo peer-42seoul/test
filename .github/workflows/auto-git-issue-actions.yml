@@ -17,7 +17,7 @@ jobs:
       
       - name: Create Issue
         id: create_issue
-        uses: actions/github-script@v3
+        uses: actions/github-script@v5
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
