@@ -56,13 +56,12 @@ jobs:
             const issueTitle = `${currentDate}-TODO`;
             const owner = "peer-42seoul";
             const repo = "test";
-            const list = await github.rest.issues.listForRepo({
+            const response = await github.rest.issues.listForRepo({
               owner,
               repo,
               state: 'open'
             });
-            console.log(list);
-            console.log(list.data.size();
+            console.log(response.data);
 
 # jobs:
 #   open-issue:
