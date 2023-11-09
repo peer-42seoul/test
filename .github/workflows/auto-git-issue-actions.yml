@@ -18,9 +18,8 @@ jobs:
       - name: Check Current Time
         id: check-time
         run: |
-          timedatectl set-timezone Asia/Seoul
           date
-          echo "::set-output name=hour::$(date +'%H')"
+          echo "::set-output name=hour::$(date -d '-3 hours' +'%H')"
       
       - name: Create Issue 
         if: ${{ steps.check-time.outputs.hour == '7' }}
