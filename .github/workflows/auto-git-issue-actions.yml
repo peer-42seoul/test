@@ -21,7 +21,7 @@ jobs:
         with:
           github-token: ${{secrets.TOKEN}}
           script: |
-            const currentDate = `2023-11-09`;
+            const currentDate = new Date().toISOString().split('T')[0];
             const issueTitle = `${currentDate}-TODO\n`;
             const issueBody1 = `# 투두리스트 작성하는 법\n`;
             const issueBody2 = `### (1) 아래 코멘트로 오늘 할 일 적기.\n`;
@@ -30,11 +30,6 @@ jobs:
             const issueBody = issueBody1 + issueBody2 + issueBody3 + issueBody4;
             console.log(issueBody);
             console.log(github);
-            # await github.rest.issues.create({
-            #   owner: Paul2021-R,
-            #   repo: 42peer/test,
-            #   title: currentDate
-            # });
 
 # jobs:
 #   open-issue:
