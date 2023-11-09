@@ -17,7 +17,9 @@ jobs:
     
       - name: Check Current Time
         id: check-time
-        run: echo "::set-output name=hour::$(date +'%H')"
+        run: |
+          TZ="Asia/Seoul"
+          echo "::set-output name=hour::$(date +'%H')"
       
       - name: Create Issue 
         if: ${{ steps.check-time.outputs.hour == '7' }}
