@@ -56,7 +56,7 @@ jobs:
             const issueTitle = `${currentDate}-TODO`;
             const owner = "peer-42seoul";
             const repo = "test";
-            const list = github.rest.issues.list({
+            const list = await github.rest.issues.list({
               owner,
               repo,
               state: 'open'
