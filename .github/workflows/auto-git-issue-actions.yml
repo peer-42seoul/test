@@ -18,7 +18,7 @@ jobs:
       - name: Check Current Time
         id: check-time
         run: |
-          TZ="Asia/Seoul"
+          timedatectl set-timezone Asia/Seoul
           date
           echo "::set-output name=hour::$(date +'%H')"
       
